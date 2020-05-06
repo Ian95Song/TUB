@@ -1,22 +1,18 @@
-yiyang.song,  06.05.2020, 01:22:26
+yiyang.song,  06.05.2020, 13:23:16
 Korrektur Blatt 1
 
 Aufgabe 3.1
 	Checks Implementation of Constructor of CorticalNeuron: 4/4
-	Checks Implementation of Constructor of Interneuron: 0/4
-	  java.lang.AssertionError: Nullpointer- you cannot add any synapses to the ArrayList outgoingsynapses, if you do not initiate it. did not expect to find [false] but found [true]
-	Checks Implementation of Constructor of Photoreceptor: 0/7
-	  java.lang.AssertionError: Nullpointer- you cannot add any synapses to the ArrayList outgoingsynapses, if you do not initiate it. did not expect to find [false] but found [true]
-Total points for Aufgabe 3.1: 4/15
+	Checks Implementation of Constructor of Interneuron: 4/4
+	Checks Implementation of Constructor of Photoreceptor: 7/7
+Total points for Aufgabe 3.1: 15/15
 
 Aufgabe 3.2
+	Checks implementation of addSynapse of Photoreceptor: 4/4
 	Checks implementation of addSynapse in Network: 2/2
+	Checks implementation of addSynapse in Network on whether the neurons addSynapse-method was used.: 1/1
 	Checks implementation of the get methods.: 3/3
-	Checks implementation of addSynapse of Photoreceptor: 0/4
-	  java.lang.AssertionError: Exception expected. did not expect to find [true] but found [false]
-	Checks implementation of addSynapse in Network on whether the neurons addSynapse-method was used.: 0/1
-	  java.lang.AssertionError: RuntimeException expected. The addSynapse-method in network should use the addSynapse-method of the neurons, because for example the Photoreceptor method throws exceptions. did not expect to find [true] but found [false]
-Total points for Aufgabe 3.2: 5/10
+Total points for Aufgabe 3.2: 10/10
 
 Aufgabe 3.3
 	Checks implementation of constructor in Network for the correct setup of the neurons array.: 15/15
@@ -25,11 +21,9 @@ Aufgabe 3.3
 Total points for Aufgabe 3.3: 25/25
 
 Aufgabe 3.4
-	Checks implementation of intergrateSignal in Interneuron: Is the signal transmitted to the next neuron?: 0/8
-	   java.lang.NullPointerException in Neuron.addSynapse(Neuron.java:38)
-	Checks implementation of intergrateSignal in Interneuron: Is the signal evenly distributed between the outgoing synapses?: 0/7
-	   java.lang.NullPointerException in Neuron.addSynapse(Neuron.java:38)
-Total points for Aufgabe 3.4: 0/15
+	Checks implementation of intergrateSignal in Interneuron: Is the signal transmitted to the next neuron?: 8/8
+	Checks implementation of intergrateSignal in Interneuron: Is the signal evenly distributed between the outgoing synapses?: 7/7
+Total points for Aufgabe 3.4: 15/15
 
 Aufgabe 3.5
 	Checks implementation of signalprocessing in Network in a simple network.: 18/18
@@ -37,4 +31,4 @@ Aufgabe 3.5
 	  java.lang.ClassCastException: class Interneuron cannot be cast to class CorticalNeuron (Interneuron and CorticalNeuron are in unnamed module of loader 'app')
 Total points for Aufgabe 3.5: 18/35
 
-Total points: 52/100
+Total points: 83/100
