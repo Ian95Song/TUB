@@ -104,13 +104,14 @@ public class Network {
      */
     public double[] signalprocessing(double[] input) {
         // TODO
+        int intermenge = this.neurons.length - this.cortical-this.receptors;
         //addsynapse for foto & inter, assume inter==foto
         for (int i=0; i<this.receptors;i++){
             this.neurons[i].outgoingsynapses = new ArrayList<>();
             addSynapse(this.neurons[i],this.neurons[i+this.receptors]);
             for (int j=0; j<this.cortical;j++){
                 this.neurons[i+this.receptors].outgoingsynapses = new ArrayList<>();
-                addSynapse(this.neurons[i+this.receptors],this.neurons[2*receptors+j]);
+                addSynapse(this.neurons[i+this.receptors],this.neurons[this.receptors+intermenge+j]);
             }
         }
 
@@ -118,11 +119,12 @@ public class Network {
         for (int i=0; i<this.receptors; i++){
             this.neurons[i].integrateSignal(input);
         }
+        //summing up
         double[] signal = new double[3];
         for (int i = 0; i<this.cortical; i++){
-            CorticalNeuron n= (CorticalNeuron) this.neurons[i+2*this.receptors];
+            CorticalNeuron n= (CorticalNeuron) this.neurons[i+this.receptors+intermenge];
             for (int j=0; j<3; j++){
-                signal[j] += n.getSignal()[j];
+                signal[j] = signal[j]+n.getSignal()[j];
             }
         }
 
@@ -186,8 +188,8 @@ public class Network {
 
 		double coloredLight[] = {478} ;
 		System.out.println(neural.colors(neural.signalprocessing(coloredLight)));
-		CorticalNeuron n= (CorticalNeuron) neural.neurons[6];
-		n.reset();
+		CorticalNeuron n1= (CorticalNeuron) neural.neurons[6];
+		n1.reset();
 		coloredLight[0]= 578;
 		System.out.println(neural.colors(neural.signalprocessing(coloredLight)));
     }
