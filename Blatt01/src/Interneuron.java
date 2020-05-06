@@ -15,6 +15,7 @@ public class Interneuron extends Neuron {
         // TODO
         super(index);
         this.index = index;
+        this.outgoingsynapses = new ArrayList<>();
     }
 
 

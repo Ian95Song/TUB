@@ -26,6 +26,7 @@ public class Photoreceptor extends Neuron {
         super(index);
         this.index = index;
         this.type = type;
+        this.outgoingsynapses = new ArrayList<>();
         if (!type.equals("blue")&&!type.equals("green")&&!type.equals("red")) {
             throw new RuntimeException("There is a non-existing type of receptor given.");
         }
@@ -40,10 +41,12 @@ public class Photoreceptor extends Neuron {
     @Override
     public void addSynapse(Synapse synapse) {
         // TODO
-        ArrayList<Synapse> outgoingsynapses = new ArrayList<>() ;
+//        ArrayList<Synapse> outgoingsynapses = new ArrayList<>() ;
 
-        outgoingsynapses.add(synapse);
-        this.outgoingsynapses = outgoingsynapses;
+//        outgoingsynapses.add(synapse);
+//        this.outgoingsynapses = outgoingsynapses;
+//        this.outgoingsynapses = new ArrayList<>();
+        this.outgoingsynapses.add(synapse);
         if (this.outgoingsynapses.size()>1){
             throw new RuntimeException("There is more than one outgoing synapse");
 

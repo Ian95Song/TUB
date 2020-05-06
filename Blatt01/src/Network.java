@@ -106,8 +106,10 @@ public class Network {
         // TODO
         //addsynapse for foto & inter, assume inter==foto
         for (int i=0; i<this.receptors;i++){
+            this.neurons[i].outgoingsynapses = new ArrayList<>();
             addSynapse(this.neurons[i],this.neurons[i+this.receptors]);
             for (int j=0; j<this.cortical;j++){
+                this.neurons[i+this.receptors].outgoingsynapses = new ArrayList<>();
                 addSynapse(this.neurons[i+this.receptors],this.neurons[2*receptors+j]);
             }
         }
