@@ -1,4 +1,4 @@
-yiyang.song,  06.05.2020, 13:23:16
+yiyang.song,  07.05.2020, 01:32:21
 Korrektur Blatt 1
 
 Aufgabe 3.1
@@ -27,8 +27,7 @@ Total points for Aufgabe 3.4: 15/15
 
 Aufgabe 3.5
 	Checks implementation of signalprocessing in Network in a simple network.: 18/18
-	Checks implementation of signalprocessing in Network in a slightly more complicated network.: 0/17
-	  java.lang.ClassCastException: class Interneuron cannot be cast to class CorticalNeuron (Interneuron and CorticalNeuron are in unnamed module of loader 'app')
-Total points for Aufgabe 3.5: 18/35
+	Checks implementation of signalprocessing in Network in a slightly more complicated network.: 17/17
+Total points for Aufgabe 3.5: 35/35
 
-Total points: 83/100
+Total points: 100/100
