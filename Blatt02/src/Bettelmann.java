@@ -55,6 +55,56 @@ public class Bettelmann {
      */
     public void playRound() {
         // TODO implement this method
+        Deque<Card> openedpile1 = new LinkedList<>();
+        Deque<Card> openedpile2 = new LinkedList<>();
+
+
+        while (!closedPile1.isEmpty()&&!closedPile2.isEmpty()){
+            Card temp1 = closedPile1.pollFirst();
+            Card temp2 = closedPile2.pollFirst();
+            //1=2
+            if (temp1.compareTo(temp2)==0){
+                openedpile1.addFirst(temp1);
+                openedpile2.addFirst(temp2);
+            }
+            //1>2
+            else if (temp1.compareTo(temp2)>0){
+                openedpile1.addFirst(temp1);
+                openedpile2.addFirst(temp2);
+                while (!openedpile1.isEmpty()) {
+                    closedPile1.addLast(openedpile1.pollLast());
+                }
+                while (!openedpile2.isEmpty()) {
+                    closedPile1.addLast(openedpile2.pollLast());
+                }
+                break;
+            }
+            //1<2
+            else{
+                openedpile1.addFirst(temp1);
+                openedpile2.addFirst(temp2);
+                while (!openedpile2.isEmpty()) {
+                    closedPile2.addLast(openedpile2.pollLast());
+                }
+                while (!openedpile1.isEmpty()) {
+                    closedPile2.addLast(openedpile1.pollLast());
+                }
+                break;
+            }
+        }
+
+        if (closedPile1.isEmpty()||closedPile2.isEmpty()){
+            if(closedPile1.size()>closedPile2.size()){
+                winner = 1;
+            }
+            else if (closedPile1.size()<closedPile2.size()){
+                winner = 2;
+            }
+            else{
+                winner = 0;
+            }
+        }
+
     }
 
     /**
@@ -109,11 +159,9 @@ public class Bettelmann {
     }
 
     public static void main(String[] args) {
-/*
-        // Game with a complete, shuffled deck
+/*        // Game with a complete, shuffled deck
         Bettelmann game = new Bettelmann();
-        game.distributeCards();
-*/
+        game.distributeCards();*/
 
         // For testing, you may also use specific distribtions and a small number of cards like this:
         int[] deckArray = {28, 30, 6, 23, 17, 14};

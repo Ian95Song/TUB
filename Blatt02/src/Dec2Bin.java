@@ -30,12 +30,18 @@ public class Dec2Bin {
     public void convert(int N) {
         // TODO implement this method
         this.N = N;
+        this.binStack = new Stack<>();
 
         int result = N;
-        while (result>0){
-            int res = result%2;
-            result = result/2;
-            binStack.push(res);
+        if (N == 0){
+            binStack.push(0);
+        }
+        else if (N>0){
+            while (result>0){
+                int res = result%2;
+                result = result/2;
+                binStack.push(res);
+            }
         }
     }
 
@@ -53,6 +59,7 @@ public class Dec2Bin {
         // TODO implement this method
         Stack<Integer> tmp = new Stack<>();
         String bi = "";
+
         while (binStack.empty()!=true) {
             int a = binStack.pop();
             tmp.push(a);
@@ -61,7 +68,6 @@ public class Dec2Bin {
         while (tmp.empty()!=true) {
             binStack.push(tmp.pop());
         }
-
 
         return bi;
     }
