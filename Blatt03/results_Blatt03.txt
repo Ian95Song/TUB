@@ -1,0 +1,23 @@
+yiyang.song,  22.05.2020, 01:31:22, cabee8023485a910b48287160ceb6f810cbfc504
+Korrektur Blatt 3
+
+Aufgabe 4.1
+	Checks Implementation of testPermutation: 15/15
+	Checks Implementation of testPermutation: 10/10
+	Checks Implementation of testPermutation: 0/10
+	   java.lang.NullPointerException in PermutationTest.testPermutation(PermutationTest.java:63)
+Total points for Aufgabe 4.1: 25/35
+
+Aufgabe 4.2
+	Checks Implementation of testDerangements: 9/9
+	Checks Implementation of testDerangements: 9/9
+	Checks Implementation of testDerangements: 8/8
+	Checks Implementation of testDerangements: 9/9
+Total points for Aufgabe 4.2: 35/35
+
+Aufgabe 4.3
+	Checks Implementation of testsameElements: 15/15
+	Checks Implementation of testsameElements: 15/15
+Total points for Aufgabe 4.3: 30/30
+
+Total points: 90/100
