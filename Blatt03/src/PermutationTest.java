@@ -60,10 +60,27 @@ class PermutationTest {
         assertFalse(doppelt1,"p1 has same numbers");
         assertFalse(doppelt2,"p2 has same numbers");
 
-        boolean isLeerList1 = p1.allDerangements.size()==0 && p1.allDerangements instanceof LinkedList ;
-        assertTrue(isLeerList1,"original1 is not empty");
-        boolean isLeerList2 = p2.allDerangements.size()==0 && p2.allDerangements instanceof LinkedList;
-        assertTrue(isLeerList2,"original2 is not empty");
+        boolean notNull1 = true;
+        boolean isLeerList1 = false;
+        if (p1.allDerangements == null){
+            notNull1 = false;
+            assertTrue (notNull1,"allDerangements is null");
+        }
+        else {
+            isLeerList1 = p1.allDerangements.size()==0 && p1.allDerangements instanceof LinkedList;
+            assertTrue(isLeerList1,"allDerangements is not empty List");
+        }
+
+        boolean notNull2 = true;
+        boolean isLeerList2 = false;
+        if (p2.allDerangements == null){
+            notNull2 = false;
+            assertTrue (notNull2,"allDerangements is null");
+        }
+        else {
+            isLeerList2 = p2.allDerangements.size()==0 && p2.allDerangements instanceof LinkedList;
+            assertTrue(isLeerList2,"allDerangements is not empty List");
+        }
 
     }
 
