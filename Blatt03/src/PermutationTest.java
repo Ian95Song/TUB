@@ -60,9 +60,9 @@ class PermutationTest {
         assertFalse(doppelt1,"p1 has same numbers");
         assertFalse(doppelt2,"p2 has same numbers");
 
-        boolean isLeerList1 = p1.allDerangements.isEmpty();
+        boolean isLeerList1 = p1.allDerangements.size()==0 && p1.allDerangements instanceof LinkedList ;
         assertTrue(isLeerList1,"original1 is not empty");
-        boolean isLeerList2 = p2.allDerangements.isEmpty();
+        boolean isLeerList2 = p2.allDerangements.size()==0 && p2.allDerangements instanceof LinkedList;
         assertTrue(isLeerList2,"original2 is not empty");
 
     }
