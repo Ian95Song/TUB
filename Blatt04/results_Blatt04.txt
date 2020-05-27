@@ -1,0 +1,14 @@
+Do 28. Mai 01:13:55 CEST 2020
+Our test could not be run on your code. This usually means there is something broken in your code.
+To fix this issue please check the following points:
+
+
+- Your code should never be in any package. Remove all lines "package XXX;" from your submission.
+- You should not use any non-standard imports. Check the Beginning of your files for lines "import XXX" and remove them if they're not part of the Vorgabe.
+- You should never use System.exit(0) or similar in your code.
+- You should never change the function headers of the Vorgabe in your submission.
+- You need to adhere to the given directory structure (see exercise sheet, e.g., BlattX/src/)
+- Your code should compile. If you see any red x in Eclipse or IDEA, please fix these problems before submitting.
+- Do not use any german Umlaut characters in variable names or output strings (best not to use them anywhere)
+
+If you checked all these points and there is still an issue please write a mail to algodat@neuro.tu-berlin.de and tell us your tubit username.
