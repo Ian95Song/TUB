@@ -10,6 +10,7 @@ public class Board {
     private int n;
     int[][] chessboard;
     int numfree;
+    int winner;
 
     /**
      * Creates Board object, am game board of size n * n with 1<=n<=10.
@@ -29,6 +30,7 @@ public class Board {
             this.chessboard = new int[n][n];
             this.n = n;
             this.numfree = n*n;
+            this.winner = 0;
         }
         else{
             throw new InputMismatchException("Dimension is not valid!");
@@ -135,6 +137,7 @@ public class Board {
             }
             if (colwin==n){
                 gamewin =  true;
+                winner = chessboard[i][0];
                 break;
             }
         }
@@ -149,6 +152,7 @@ public class Board {
                 }
                 if (rowwin==n){
                     gamewin = true;
+                    winner = chessboard[0][i];
                     break;
                 }
             }
@@ -163,6 +167,7 @@ public class Board {
             }
             if (diagwin1==n){
                 gamewin = true;
+                winner = chessboard[0][0];
             }
         }
         //check diagonal2 if not win
@@ -175,6 +180,7 @@ public class Board {
             }
             if (diagwin2==n){
                 gamewin = true;
+                winner = chessboard[0][n-1];
             }
         }
 
@@ -205,7 +211,6 @@ public class Board {
      */
     public void print() {
         // TODO
-        System.out.println("----------------------");
         for (int i=0; i<n;i++){
             for (int j=0;j<n;j++){
                 System.out.print("| "+(chessboard[j][i]==0?" ":chessboard[j][i]==1?"X":"O")+" ");
@@ -213,13 +218,12 @@ public class Board {
                     System.out.println("|");
                 }
             }
-            System.out.println("----------------------");
         }
     }
 
 //    public static void main(String[] args) {
 //        Board game = new Board(3);
-//        game.doMove(new Position(1,1),-1);
+//        game.doMove(new Position(1,1),1);
 //        game.doMove(new Position(0,0),-1);
 //        game.doMove(new Position(1,0),1);
 //        game.doMove(new Position(2,2),-1);
@@ -228,6 +232,7 @@ public class Board {
 //        System.out.println(game.nFreeFields());
 //        System.out.println(game.validMoves());
 //        System.out.println(game.isGameWon());
+//        System.out.println(game.winner);
 //    }
 
 }
