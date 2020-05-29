@@ -116,6 +116,8 @@ public class TicTacToe {
             board.undoMove(p);
         }
 
+        System.out.println("Evaluation for player '"+(player==1?"x":"o")+"':");
+
         for (int i = 0; i < board.getN(); i++) {
             for (int j = 0; j < board.getN(); j++) {
                 System.out.printf("%3s",finalboard[j][i]);
@@ -132,19 +134,19 @@ public class TicTacToe {
 
     public static void main(String[] args) {
         Board game = new Board(3);
-//        game.doMove(new Position(2, 2), 1);
-//        game.doMove(new Position(1, 0), -1);
-        game.doMove(new Position(0, 0), 1);
-        game.doMove(new Position(2, 0), 1);
-        game.doMove(new Position(1, 1), 1);
-        game.doMove(new Position(0, 1), -1);
-        game.doMove(new Position(2, 2), -1);
+        game.doMove(new Position(2, 2), 1);
+        game.doMove(new Position(1, 0), -1);
+//        game.doMove(new Position(0, 0), 1);
+//        game.doMove(new Position(2, 0), 1);
+//        game.doMove(new Position(1, 1), 1);
+//        game.doMove(new Position(0, 1), -1);
+//        game.doMove(new Position(2, 2), -1);
 
 //        game.doMove(new Position(0, 0), 1);
 //        game.print();
-//        evaluatePossibleMoves(game,-1);
-        int a = alphaBeta(game, -1);
-        System.out.println(a);
+        evaluatePossibleMoves(game,1);
+//        int a = alphaBeta(game, -1);
+//        System.out.println(a);
 
     }
 
