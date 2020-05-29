@@ -1,4 +1,4 @@
-yiyang.song,  29.05.2020, 13:30:06, f12a07005435737f87d2f112868020ef1c0f1045
+yiyang.song,  30.05.2020, 00:48:20, 564fb921543b99110cfd65707f99eca47ac5e20a
 Korrektur Blatt 4
 
 Aufgabe 1.1
@@ -22,25 +22,8 @@ Aufgabe 1.2
 Total points for Aufgabe 1.2: 50/50
 
 Aufgabe 1.3
+	Gibt evaluatePossibleMoves() in unterschiedlichen Spielsituationen das erwartete Ausgabe?: 3/3
 	Gibt evaluatePossibleMoves() in unterschiedlichen Spielsituationen das erwartete Ausgabe?: 7/7
-	Gibt evaluatePossibleMoves() in unterschiedlichen Spielsituationen das erwartete Ausgabe?: 0/3
-	  java.lang.AssertionError: Auf die Eingabe
-.o.
-...
-..x
-wird folgende Ausgabe erwartet:
+Total points for Aufgabe 1.3: 10/10
 
-Evaluation for player 'x':
-  0  o  3
-  0  3 -2
-  3  0  x
-
-aber es kam:
-
-  0  o  3
-  0  3 -2
-  3  0  x
-
-Total points for Aufgabe 1.3: 7/10
-
-Total points: 97/100
+Total points: 100/100
