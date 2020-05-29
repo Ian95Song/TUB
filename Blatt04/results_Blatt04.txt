@@ -1,4 +1,4 @@
-yiyang.song,  29.05.2020, 01:22:56, dbdc1a1324f45c450660a970a7509869e6136fd2
+yiyang.song,  29.05.2020, 13:30:06, f12a07005435737f87d2f112868020ef1c0f1045
 Korrektur Blatt 4
 
 Aufgabe 1.1
@@ -7,27 +7,22 @@ Aufgabe 1.1
 	Liefert getField() für alle Positionen den von setField() gesetzten Wert?: 5/5
 	Lösen ungültige Positionen bei getField() eine Exception aus?: 2/2
 	Gibt isGameWon() in unterschiedlichen Spielsituationen das erwartete Ergebnis?: 8/8
+	Gibt Methode nFreeFields() für unterschiedliche Brettgrößen die richtige Antwort?: 4/4
 	Lösen ungültige Token-Werte bei setField() eine Exception aus?: 1/1
 	Lösen ungültige Positionen bei setField() eine Exception aus?: 2/2
 	Liefert validMoves() in unterschiedlichen Spielsituationen das erwartete Ergebnis?: 8/8
-	Gibt Methode nFreeFields() für unterschiedliche Brettgrößen die richtige Antwort?: 0/4
-	  java.lang.AssertionError: nFreeFields sollte nach dem Vertauschen eines Steins nicht verändert werden. Für nFreeFields ist expected [8] but found [7]
-Total points for Aufgabe 1.1: 36/40
+Total points for Aufgabe 1.1: 40/40
 
 Aufgabe 1.2
 	Liefert alphaBeta() in komplexen Stellungen die erwartete Bewertung?: 15/15
+	Liefert alphaBeta() in direkten Verluststellungen die erwartete Bewertung?: 10/10
 	Liefert alphaBeta() in komplexen Stellungen die erwartete Bewertung?: 5/5
 	Liefert alphaBeta() in direkten Gewinnstellungen die erwartete Bewertung?: 10/10
 	Liefert alphaBeta() in komplexen Stellungen die erwartete Bewertung?: 10/10
-	Liefert alphaBeta() in direkten Verluststellungen die erwartete Bewertung?: 0/10
-	  java.lang.AssertionError: Bei der Spielsituation
-x.x
-ox.
-..o
-wird Bewertung -3 erwartet. expected [-3] but found [3]
-Total points for Aufgabe 1.2: 40/50
+Total points for Aufgabe 1.2: 50/50
 
 Aufgabe 1.3
+	Gibt evaluatePossibleMoves() in unterschiedlichen Spielsituationen das erwartete Ausgabe?: 7/7
 	Gibt evaluatePossibleMoves() in unterschiedlichen Spielsituationen das erwartete Ausgabe?: 0/3
 	  java.lang.AssertionError: Auf die Eingabe
 .o.
@@ -42,28 +37,10 @@ Evaluation for player 'x':
 
 aber es kam:
 
-0 o 3 
-0 3 -2 
-3 0 x 
+  0  o  3
+  0  3 -2
+  3  0  x
 
-	Gibt evaluatePossibleMoves() in unterschiedlichen Spielsituationen das erwartete Ausgabe?: 0/7
-	  java.lang.AssertionError: Auf die Eingabe
-x..
-...
-...
-wird folgende Ausgabe erwartet:
+Total points for Aufgabe 1.3: 7/10
 
-Evaluation for player 'o':
-  x -3 -3
- -3  0 -3
- -3 -3 -3
-
-aber es kam:
-
-x 3 3 
-3 0 3 
-3 3 3 
-
-Total points for Aufgabe 1.3: 0/10
-
-Total points: 76/100
+Total points: 97/100
