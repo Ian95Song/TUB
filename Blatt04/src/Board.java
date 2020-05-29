@@ -96,11 +96,12 @@ public class Board {
         }
 //        when input valid, setField
         if (xvalid&&yvalid&&tokenvalid) {
+            int prev = chessboard[pos.x][pos.y];
             chessboard[pos.x][pos.y]=token;
-            if (token==0){
+            if (prev!=0&&token==0){
                 numfree++;
             }
-            else numfree--;
+            else if (prev==0&&token!=0) numfree--;
         } else throw new InputMismatchException("input is not valid!");
 
     }
@@ -224,10 +225,24 @@ public class Board {
 //    public static void main(String[] args) {
 //        Board game = new Board(3);
 //        game.doMove(new Position(1,1),1);
-//        game.doMove(new Position(0,0),-1);
-//        game.doMove(new Position(1,0),1);
-//        game.doMove(new Position(2,2),-1);
-//        game.doMove(new Position(1,2),1);
+//        game.print();
+//        System.out.println(game.nFreeFields());
+//        System.out.println(game.validMoves());
+//        System.out.println(game.isGameWon());
+//        System.out.println(game.winner);
+//        game.doMove(new Position(1,1),-1);
+//        game.print();
+//        System.out.println(game.nFreeFields());
+//        System.out.println(game.validMoves());
+//        System.out.println(game.isGameWon());
+//        System.out.println(game.winner);
+//        game.doMove(new Position(1,0),-1);
+//        game.print();
+//        System.out.println(game.nFreeFields());
+//        System.out.println(game.validMoves());
+//        System.out.println(game.isGameWon());
+//        System.out.println(game.winner);
+//        game.undoMove(new Position(1,0));
 //        game.print();
 //        System.out.println(game.nFreeFields());
 //        System.out.println(game.validMoves());

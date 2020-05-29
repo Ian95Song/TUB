@@ -1,3 +1,4 @@
+
 /**
  * This class implements and evaluates game situations of a TicTacToe game.
  */
@@ -19,8 +20,8 @@ public class TicTacToe {
         if (player==1){
             return scorePlayerA(board,alpha,beta);
         }
-        else{
-            return scorePlayerB(board,alpha,beta);
+        else {
+            return -scorePlayerB(board,alpha,beta);
         }
     }
 
@@ -110,14 +111,14 @@ public class TicTacToe {
 
         for (Position p : board.validMoves()) {
             board.doMove(p, player);
-            int result = alphaBeta(board, -player);
+            int result = -alphaBeta(board, -player);
             finalboard[p.x][p.y] = String.valueOf(result);
             board.undoMove(p);
         }
 
         for (int i = 0; i < board.getN(); i++) {
             for (int j = 0; j < board.getN(); j++) {
-                System.out.print(finalboard[j][i] + " ");
+                System.out.printf("%3s",finalboard[j][i]);
                 if (j == board.getN() - 1) {
                     System.out.println();
                 }
@@ -131,18 +132,19 @@ public class TicTacToe {
 
     public static void main(String[] args) {
         Board game = new Board(3);
-        game.doMove(new Position(2, 2), 1);
-//        game.doMove(new Position(0, 2), 1);
-//        game.doMove(new Position(0, 0), 1);
 //        game.doMove(new Position(2, 2), 1);
-        game.doMove(new Position(2, 0), -1);
-//        game.doMove(new Position(1, 2), -1);
-//        game.doMove(new Position(1, 1), -1);
-//        game.doMove(new Position(0,2),-1);
+//        game.doMove(new Position(1, 0), -1);
+        game.doMove(new Position(0, 0), 1);
+        game.doMove(new Position(2, 0), 1);
+        game.doMove(new Position(1, 1), 1);
+        game.doMove(new Position(0, 1), -1);
+        game.doMove(new Position(2, 2), -1);
+
+//        game.doMove(new Position(0, 0), 1);
 //        game.print();
-        evaluatePossibleMoves(game,1);
-//        int a = alphaBeta(game, -1);
-//        System.out.println(a);
+//        evaluatePossibleMoves(game,-1);
+        int a = alphaBeta(game, -1);
+        System.out.println(a);
 
     }
 
