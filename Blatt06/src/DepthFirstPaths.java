@@ -63,6 +63,7 @@ public class DepthFirstPaths {
     private final int s;         // source vertex
     private final Queue<Integer> preorder;   // vertices in preorder
     private final Queue<Integer> postorder;  // vertices in postorder
+    Stack<Integer> tmp = new Stack<>();
 
     /**
      * Computes a path between {@code s} and every other vertex in graph {@code G}.
@@ -90,7 +91,7 @@ public class DepthFirstPaths {
         //TODO: Zeilen hinzufuegen
         marked[v] = true;
         preorder.add(v);
-//        postorder.add(v);
+        tmp.push(v);
         for (int w : G.adj(v)) {
             if (!marked[w]) {
                 edgeTo[w]=v;
@@ -98,6 +99,7 @@ public class DepthFirstPaths {
                 dfs(G, w);
             }
         }
+
     }
 
     // non-recursive depth first search from v
@@ -115,6 +117,7 @@ public class DepthFirstPaths {
         marked[s] = true;
         stack.push(s);
         preorder.add(s);
+        tmp.push(s);
         while (!stack.isEmpty()) {
             int v = stack.peek();
             if (adj[v].hasNext()) {
@@ -122,8 +125,10 @@ public class DepthFirstPaths {
                 if (!marked[w]) {
                     // discovered vertex w for the first time
                     edgeTo[w]=v;
+                    distTo[w]+=1;
                     marked[w] = true;
                     preorder.add(w);
+                    tmp.push(w);
                     stack.push(w);
                 }
             } else {
@@ -171,10 +176,15 @@ public class DepthFirstPaths {
      * Returns the vertices in postorder. This method differs from the original.
      * @return the vertices in postorder, as a queue of vertices
      */
+//    public Queue<Integer> post() {
+//        return postorder;
+//    }
     public Queue<Integer> post() {
+        while(!tmp.empty()){
+            postorder.add(tmp.pop());
+        }
         return postorder;
     }
-
     /**
      * Returns the vertices in preorder. This method differs from the original.
      * @return the vertices in preorder, as a queue of vertices 

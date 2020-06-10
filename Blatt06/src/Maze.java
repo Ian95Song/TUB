@@ -11,8 +11,8 @@ public class Maze {
     private final int N;
     private final Graph M;    //Maze
     public int startnode;
-    RandomDepthFirstPaths rdfp;
-    int [] rdfpEdge;
+//    RandomDepthFirstPaths rdfp;
+//    int [] rdfpEdge;
 
     public Maze(int N, int startnode) {
 
@@ -88,10 +88,10 @@ public class Maze {
     private void buildMaze() {
         // TODO
         Graph G = mazegrid();
-        rdfp = new RandomDepthFirstPaths(G,startnode);
+        RandomDepthFirstPaths rdfp = new RandomDepthFirstPaths(G,startnode);
         rdfp.randomDFS(G);
 //        rdfp.randomNonrecursiveDFS(G);
-        rdfpEdge = rdfp.edge();
+        int [] rdfpEdge = rdfp.edge();
         for (int i=1; i<rdfpEdge.length;++i){
             if (rdfp.hasPathTo(i)&&!hasEdge(rdfpEdge[i],i)){
                 addEdge(rdfpEdge[i],i);
@@ -108,15 +108,19 @@ public class Maze {
      */
     public List<Integer> findWay(int v, int w) {
         // TODO
-        if (!rdfp.hasPathTo(w)){
-            return null;
-        }
-        LinkedList<Integer> p = new LinkedList<>();
-        for (int i=w; i!=v; i=rdfpEdge[i]){
-            p.addFirst(i);
-        }
-        p.addFirst(v);
-        return p;
+//        if (!rdfp.hasPathTo(w)){
+//            return null;
+//        }
+//        LinkedList<Integer> p = new LinkedList<>();
+//        for (int i=w; i!=v; i=rdfpEdge[i]){
+//            p.addFirst(i);
+//        }
+//        p.addFirst(v);
+//        return p;
+        RandomDepthFirstPaths searchM = new RandomDepthFirstPaths(M,v);
+        searchM.randomDFS(M);
+        return searchM.pathTo(w);
+
 
     }
 
@@ -131,7 +135,7 @@ public class Maze {
         // FOR TESTING
         Maze game = new Maze(50,0);
         List<Integer> p = game.findWay(0, 2499);
-        GridGraph vis1 = new GridGraph(game.M);
+//        GridGraph vis1 = new GridGraph(game.M);
         GridGraph vis2 = new GridGraph(game.M,p);
     }
 
