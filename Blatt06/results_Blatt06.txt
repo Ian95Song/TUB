@@ -1,4 +1,4 @@
-yiyang.song,  11.06.2020, 00:33:48, 4a2918b1eb3c424f9a495c8eb6e672aedbd6d58d
+yiyang.song,  11.06.2020, 12:29:19, 5b7a85243253e7d474b75cc84903e7f207f15595
 Korrektur Blatt 6
 
 Aufgabe 3.1
@@ -31,8 +31,7 @@ Total points for Aufgabe 3.5: 10/10
 
 Aufgabe 3.6
 	Checkt die Implementierung von buildMaze: 20/20
-	Checkt die Implementierung von findWay: 0/10
-	   java.lang.NullPointerException in Maze.findWay(Maze.java:111)
-Total points for Aufgabe 3.6: 20/30
+	Checkt die Implementierung von findWay: 10/10
+Total points for Aufgabe 3.6: 30/30
 
-Total points: 79/100
+Total points: 89/100
