@@ -63,7 +63,7 @@ public class DepthFirstPaths {
     private final int s;         // source vertex
     private final Queue<Integer> preorder;   // vertices in preorder
     private final Queue<Integer> postorder;  // vertices in postorder
-    Stack<Integer> tmp = new Stack<>();
+//    Stack<Integer> tmp = new Stack<>();
 
     /**
      * Computes a path between {@code s} and every other vertex in graph {@code G}.
@@ -91,14 +91,15 @@ public class DepthFirstPaths {
         //TODO: Zeilen hinzufuegen
         marked[v] = true;
         preorder.add(v);
-        tmp.push(v);
+//        tmp.push(v);
         for (int w : G.adj(v)) {
             if (!marked[w]) {
                 edgeTo[w]=v;
-                distTo[w]+=1;
+                distTo[w]+=distTo[v]+1;
                 dfs(G, w);
             }
         }
+        postorder.add(v);
 
     }
 
@@ -117,7 +118,7 @@ public class DepthFirstPaths {
         marked[s] = true;
         stack.push(s);
         preorder.add(s);
-        tmp.push(s);
+//        tmp.push(s);
         while (!stack.isEmpty()) {
             int v = stack.peek();
             if (adj[v].hasNext()) {
@@ -125,14 +126,15 @@ public class DepthFirstPaths {
                 if (!marked[w]) {
                     // discovered vertex w for the first time
                     edgeTo[w]=v;
-                    distTo[w]+=1;
+                    distTo[w]=distTo[v]+1;
                     marked[w] = true;
                     preorder.add(w);
-                    tmp.push(w);
+//                    tmp.push(w);
                     stack.push(w);
                 }
             } else {
                 stack.pop();
+                postorder.add(v);
             }
 
         }
@@ -161,14 +163,15 @@ public class DepthFirstPaths {
      */
     public List<Integer> pathTo(int v) {
         // TODO
+        validateVertex(v);
         if (!hasPathTo(v)){
             return null;
         }
         LinkedList<Integer> p = new LinkedList<>();
         for (int i=v; i!=s; i=edgeTo[i]){
-            p.addFirst(i);
+            p.add(i);
         }
-        p.addFirst(s);
+        p.add(s);
         return p;
     }
 
@@ -180,9 +183,9 @@ public class DepthFirstPaths {
 //        return postorder;
 //    }
     public Queue<Integer> post() {
-        while(!tmp.empty()){
-            postorder.add(tmp.pop());
-        }
+//        while(!tmp.empty()){
+//            postorder.add(tmp.pop());
+//        }
         return postorder;
     }
     /**
